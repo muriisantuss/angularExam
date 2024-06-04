@@ -13,6 +13,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -24,7 +25,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     HomeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, ReactiveFormsModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, ReactiveFormsModule, HttpClientModule],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })

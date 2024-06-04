@@ -1,12 +1,51 @@
 {
   "book": [
     {
-
+      "id": 1,
+      "title": "The Secret Garden",
+      "nameauthor": "Autor",
+      "synopsis": "Orphaned Mary Lennox ",
+      "date": "1911-08",
+      "genre": "Children's Fiction"
+    },
+    {
+      "id": 2,
+      "title": "1984",
+      "nameauthor": "Autor",
+      "synopsis": "Winston Smith fights for freedom and truth",
+      "date": "1949-06",
+      "genre": "Dystopian Fiction"
+    },
+    {
+      "id": 3,
+      "title": "One Hundred Years of Solitude",
+      "nameauthor": "Autor",
+      "synopsis": "The epic saga of the Buendía family over seven generations",
+      "date": "1967-05",
+      "genre": "Magical Realism"
     }
   ],
   "author": [
     {
-
+      "id": 1,
+      "fullname": "Frances Eliza Hodgson Burnett",
+      "pseudonym": "None",
+      "born": "1849-11-24",
+      "nationality": "British-American"
+    },
+    {
+      "id": 2,
+      "fullname": "Eric Arthur Blair",
+      "pseudonym": "George Orwell",
+      "born": "1903-06-25",
+      "nationality": "British"
+    },
+    {
+      "id": 3,
+      "fullname": "Gabriel José de la Concordia García Márquez",
+      "pseudonym": "Gabriel García Márquez",
+      "born": "1927-03-06",
+      "nationality": "Colombian"
     }
   ]
 }

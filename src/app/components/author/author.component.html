@@ -95,10 +95,10 @@
           <td>{{ catch.born }}</td>
           <td>{{ catch.nationality }}</td>
           <td class="d-flex gap-1">
-            <button class="btn btn-success btn-sm">
+            <button class="btn btn-success btn-sm" (click)="update(catch)">
               Edit
             </button>
-            <button class="btn btn-danger btn-sm">
+            <button class="btn btn-danger btn-sm" (click)="delete(catch)">
               Remove
             </button>
           </td>

@@ -3,7 +3,7 @@
     {
       "id": 1,
       "title": "The Secret Garden",
-      "nameauthor": "Autor",
+      "nameauthor": 1,
       "synopsis": "Orphaned Mary Lennox ",
       "date": "1911-08",
       "genre": "Children's Fiction"
@@ -11,7 +11,7 @@
     {
       "id": 2,
       "title": "1984",
-      "nameauthor": "Autor",
+      "nameauthor": 2,
       "synopsis": "Winston Smith fights for freedom and truth",
       "date": "1949-06",
       "genre": "Dystopian Fiction"
@@ -19,7 +19,7 @@
     {
       "id": 3,
       "title": "One Hundred Years of Solitude",
-      "nameauthor": "Autor",
+      "nameauthor": 3,
       "synopsis": "The epic saga of the Buendía family over seven generations",
       "date": "1967-05",
       "genre": "Magical Realism"

@@ -1,8 +1,9 @@
 import { BookService } from './../../services/book.service';
+import { AuthorService } from '../../services/author.service';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup} from '@angular/forms';
 import { Book } from '../../interfaces/book';
-
+import { Author } from '../../interfaces/author';
 
 @Component({
   selector: 'app-book',
@@ -11,10 +12,11 @@ import { Book } from '../../interfaces/book';
 })
 export class BookComponent {
   arrayBook: Book[] = []
+  arrayAuthor: Author[] = []
   bookFormGroup: FormGroup;
   isEditing: boolean = false;
 
-  constructor(private formBuilder: FormBuilder, private bookService: BookService){
+  constructor(private formBuilder: FormBuilder, private bookService: BookService, private authorService: AuthorService){
     this.bookFormGroup = formBuilder.group({
       id: [''],
       title: [''],
@@ -27,12 +29,29 @@ export class BookComponent {
 
   ngOnInit(): void {
     this.loadBook();
+    this.loadAuthor();
   }
 
   loadBook() {
     this.bookService.getBook().subscribe({
-      next: data => this.arrayBook = data,
+      next: (data) => (this.arrayBook = data),
     });
+  }
+
+  loadAuthor() {
+    this.authorService.getAuthor().subscribe({
+      next: (data) =>(this.arrayAuthor = data),
+    });
+  }
+
+  compare(autor1: Author, autor2: Author): boolean {
+    return autor1 && autor2
+      ? autor1.id === autor2.id
+      : autor1 === autor2;
+  }
+
+  getAuthorName(authorId: number): Author | undefined {
+    return this.arrayAuthor.find((c) => c.id === authorId);
   }
 
   submit() {

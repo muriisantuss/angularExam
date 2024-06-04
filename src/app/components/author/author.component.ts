@@ -28,8 +28,8 @@ export class AuthorComponent {
   }
 
   loadAuthor() {
-    this.authorService.getBook().subscribe({
-      next: data => this.arrayAuthor = data,
+    this.authorService.getAuthor().subscribe({
+      next: (data) => (this.arrayAuthor = data),
     });
   }
 

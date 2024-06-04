@@ -15,7 +15,6 @@ import { HomeComponent } from './components/home/home.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +24,13 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     HomeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, ReactiveFormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    NgbModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+  ],
   providers: [provideClientHydration()],
   bootstrap: [AppComponent],
 })

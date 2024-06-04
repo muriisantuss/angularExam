@@ -11,7 +11,7 @@ export class AuthorService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getBook(): Observable<Author[]>{
+  getAuthor(): Observable<Author[]>{
     return this.httpClient.get<Author[]>(this.apiUrl)
   }
   save(author: Author): Observable<Author>{

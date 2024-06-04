@@ -1,5 +1,5 @@
 <main class="container p-5 ">
-  <form class="col-6 mx-auto">
+  <form [formGroup]="authorFormGroup" class="col-6 mx-auto">
     <header class="mb-3"><h1>Author Registration</h1></header>
     <div>
       <section class="row mb-3">
@@ -9,6 +9,7 @@
             <input
               type="text"
               class="form-control"
+              formControlName="fullname"
               placeholder="FullName"
               aria-label="Username"
               aria-describedby="basic-addon1"
@@ -21,6 +22,7 @@
             <input
               type="text"
               class="form-control"
+              formControlName="pseudonym"
               placeholder="Pseudonym"
               aria-label="Username"
               aria-describedby="basic-addon1"
@@ -32,7 +34,7 @@
         <div class="col">
           <label class="form-label">Born:</label>
           <div class="input-group mb-2 sm-10">
-            <input type="date" name="born" class="form-control" id="born" />
+            <input type="date" name="born" formControlName="born" class="form-control" id="born" />
           </div>
         </div>
         <div class="col">
@@ -42,6 +44,7 @@
           <div class="input-group mb-3">
             <input
               type="text"
+              formControlName="nationality"
               class="form-control"
               placeholder="Nationality"
               aria-label="Username"
@@ -64,10 +67,43 @@
             </label>
           </div>
           <div class="btn-save text-center">
-            <button type="button" class="btn btn-secondary w-50 mt-3">Save</button>
+            <button type="button" class="btn btn-secondary w-50 mt-3" (click)="submit()">Save</button>
           </div>
         </div>
       </section>
     </div>
   </form>
+
+  <div class="p-5">
+    <h3 class="mb-4 text-center">Books</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Author's name</th>
+          <th scope="col">Pseudonym</th>
+          <th scope="col">Born</th>
+          <th scope="col">Nationality</th>
+          <th scope="col">Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let catch of arrayAuthor">
+          <th scope="row">#{{ catch.id }}</th>
+          <td>{{ catch.fullname }}</td>
+          <td>{{ catch.pseudonym }}</td>
+          <td>{{ catch.born }}</td>
+          <td>{{ catch.nationality }}</td>
+          <td class="d-flex gap-1">
+            <button class="btn btn-success btn-sm">
+              Edit
+            </button>
+            <button class="btn btn-danger btn-sm">
+              Remove
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </main>

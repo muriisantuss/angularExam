@@ -1,0 +1,126 @@
+<main class="container p-5 rounded-5 mt-3">
+  <form [formGroup]="bookFormGroup" class="col-6 mx-auto">
+    <header class="mb-3"><h1>Book Registration</h1></header>
+    <div>
+      <section class="row mb-3">
+        <div class="col">
+          <label class="form-label">Book's Title:</label>
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              formControlName="title"
+              class="form-control"
+              placeholder="Title"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <label class="form-label">Name Author:</label>
+          <div class="input-group mb-3">
+            <select
+              type="text"
+              formControlName="nameauthor"
+              class="form-select"
+              placeholder="Title"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            >
+              <option></option>
+              <option>Autor</option>
+              <option>Livros</option>
+            </select>
+            <span class="input-group-text"></span>
+          </div>
+        </div>
+        <div>
+          <label for="txt" class="form-label">Synopsis </label>
+          <div class="input-group">
+            <textarea
+              class="form-control"
+              formControlName='synopsis'
+              id="mensagem"
+              rows="5"
+              placeholder="Synopsis"
+            ></textarea>
+          </div>
+        </div>
+      </section>
+      <section class="row mb-3">
+        <div class="col">
+          <label class="form-label">Release Date Of:</label>
+          <div class="input-group mb-2 sm-10">
+            <input
+              type="month"
+              formControlName="date"
+              class="form-control"
+              id="ano"
+              min="100"
+              max="2099"
+              step="100"
+              placeholder="Release Date Of"
+            />
+          </div>
+        </div>
+        <div class="col">
+          <label for="txtFullName" class="sm-2 form-label">
+            Literary Genre:
+          </label>
+          <div class="input-group mb-3">
+            <input
+              type="text"
+              formControlName="genre"
+              class="form-control"
+              placeholder="Literary Genre"
+              aria-label="Username"
+              aria-describedby="basic-addon1"
+            />
+          </div>
+        </div>
+        <div class="btn-save text-center">
+          <button type="button" class="btn btn-secondary w-50 mt-3" (click)="submit()">
+            Save
+          </button>
+        </div>
+      </section>
+    </div>
+  </form>
+
+  <div class="p-5">
+    <h3 class="mb-4 text-center">Books</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Title</th>
+          <th scope="col">Author's name</th>
+          <th scope="col">Synopsis</th>
+          <th scope="col">Release Date Of</th>
+          <th scope="col">Literary Genre:</th>
+          <th scope="col">Check</th>
+          <th scope="col">Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let catch of arrayBook">
+          <th scope="row">#{{ catch.id }}</th>
+          <td>{{ catch.title }}</td>
+          <td>{{ catch.nameauthor }}</td>
+          <td>{{ catch.synopsis }}</td>
+          <td>{{ catch.date }}</td>
+          <td></td>
+          <td>{{ catch.genre }}</td>
+          <td class="d-flex gap-1">
+            <button class="btn btn-success btn-sm">
+              Edit
+            </button>
+            <button class="btn btn-danger btn-sm">
+              Remove
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</main>
